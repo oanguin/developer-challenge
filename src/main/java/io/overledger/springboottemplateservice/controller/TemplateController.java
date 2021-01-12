@@ -1,9 +1,9 @@
-package io.overledger.springboottemplateservice.controllers;
+package io.overledger.springboottemplateservice.controller;
 
 import io.overledger.springboottemplateservice.dto.TemplateRequest;
 import io.overledger.springboottemplateservice.dto.TemplateResponse;
 import io.overledger.springboottemplateservice.mongodb.TemplateDocument;
-import io.overledger.springboottemplateservice.services.TemplateService;
+import io.overledger.springboottemplateservice.service.TemplateService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;

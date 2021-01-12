@@ -1,4 +1,4 @@
-package io.overledger.springboottemplateservice.exceptions;
+package io.overledger.springboottemplateservice.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

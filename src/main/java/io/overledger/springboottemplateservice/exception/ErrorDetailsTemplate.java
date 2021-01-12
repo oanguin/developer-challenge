@@ -1,4 +1,4 @@
-package io.overledger.springboottemplateservice.exceptions;
+package io.overledger.springboottemplateservice.exception;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package io.overledger.springboottemplateservice.exceptions;
+package io.overledger.springboottemplateservice.exception;
 
 public class TemplateException extends RuntimeException {
 

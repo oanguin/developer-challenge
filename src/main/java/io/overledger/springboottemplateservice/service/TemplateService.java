@@ -1,8 +1,8 @@
-package io.overledger.springboottemplateservice.services;
+package io.overledger.springboottemplateservice.service;
 
 import io.overledger.springboottemplateservice.dto.TemplateRequest;
 import io.overledger.springboottemplateservice.dto.TemplateResponse;
-import io.overledger.springboottemplateservice.exceptions.TemplateException;
+import io.overledger.springboottemplateservice.exception.TemplateException;
 import io.overledger.springboottemplateservice.mongodb.TemplateDocument;
 import io.overledger.springboottemplateservice.mongodb.TemplateRepository;
 import io.overledger.springboottemplateservice.rabbitmq.TemplatePublishGateway;
@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
-import java.util.List;
+
 import java.util.UUID;
 
 @Service
@@ -32,18 +32,20 @@ public class TemplateService {
 
         // Publishes to the Queue. If you run the same service again, with the Channel Handler enabled,
         // you can comment out the 'saveToDatabase' function below as the ChannelHandler will do that instead.
-        publishToQueue(templateRequest);
+
+        //publishToQueue(templateRequest);
 
         // Saves to the database. Comment this out if you want to test the Consumer functionality, as the TemplateChannelHandler
         // is used to save to the database.
-        saveToDatabase(templateRequest);
 
-        List<TemplateDocument> templateMessages = this.templateRepository
-                .findAllByTemplateField(templateRequest.getTemplateField())
-                .collectList()
-                .block();
-        if (templateMessages.size() == 5)
-            return Mono.just(new TemplateResponse("42"));
+        //saveToDatabase(templateRequest);
+
+//        List<TemplateDocument> templateMessages = this.templateRepository
+//                .findAllByTemplateField(templateRequest.getTemplateField())
+//                .collectList()
+//                .block();
+//        if (templateMessages.size() == 5)
+//            return Mono.just(new TemplateResponse("42"));
 
         TemplateResponse templateResponse = new TemplateResponse();
         templateResponse.setTemplateField(templateRequest.getTemplateField());
